@@ -20,7 +20,12 @@ let Students:studentType[]=[
     class:7,
     isActive:false
 }]
+let activeStudents= Students.filter((data)=>{
+    if(data.isActive==true)
+{return true}
+})
 
+console.log(activeStudents);
 
 
 

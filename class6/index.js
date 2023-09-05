@@ -16,3 +16,9 @@ let Students = [
         isActive: false
     }
 ];
+let activeStudents = Students.filter((data) => {
+    if (data.isActive == true) {
+        return true;
+    }
+});
+console.log(activeStudents);
