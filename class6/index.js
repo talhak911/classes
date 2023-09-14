@@ -16,8 +16,9 @@ let Students = [
         isActive: false
     }
 ];
-let activeStudents = Students.filter((data) => {
+let activeStudents = Students.filter((data, index, Stud) => {
     if (data.isActive == true) {
+        console.log("full array", Stud);
         return true;
     }
 });

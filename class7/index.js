@@ -1,46 +1,62 @@
-import inquirer from "inquirer";
-async function start() {
-    const val = await inquirer.prompt([
-        {
-            type: 'number',
-            name: 'num12',
-            message: 'Write the first number'
-        },
-        {
-            type: 'number',
-            name: 'num2',
-            message: 'Write the second number'
-        },
-        {
-            type: 'list',
-            name: 'operation',
-            message: 'which operation do yo want to perform',
-            choices: ['+', '-', '*', '/']
+"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const inquirer_1 = __importDefault(require("inquirer"));
+function start() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const calculator = yield inquirer_1.default.prompt([
+            {
+                type: 'number',
+                name: 'num1',
+                message: 'Write the first number'
+            },
+            {
+                type: 'number',
+                name: 'num2',
+                message: 'Write the second number'
+            },
+            {
+                type: 'list',
+                name: 'operation',
+                message: 'which operation do yo want to perform',
+                choices: ['+', '-', '*', '/']
+            }
+        ]);
+        let result;
+        const { num1, num2, operation } = calculator;
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 == 0) {
+                    console.log("Cannot divide by zero");
+                }
+                else {
+                    result = calculator.num1 / calculator.num2;
+                }
+                break;
         }
-    ]);
-    let result;
-    const { num12, num2, operation } = val;
-    switch (operation) {
-        case '+':
-            result = num12 + num2;
-            break;
-        case '-':
-            result = num12 - num2;
-            break;
-        case '*':
-            result = num12 * num2;
-            break;
-        case '/':
-            if (num2 == 0) {
-                console.log("Cannot divide by zero");
-            }
-            else {
-                result = val.num12 / val.num2;
-            }
-            break;
-    }
-    if (num2 != 0) {
-        console.log("your answer is " + result);
-    }
+        if (num2 != 0) {
+            console.log("your answer is " + result);
+        }
+    });
 }
 start();
