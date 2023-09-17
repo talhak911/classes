@@ -1,15 +1,17 @@
 import inquirer from "inquirer";
 
-
+try{
 async function checkGrade() {
     
-let percentage =await inquirer.prompt({
+let percentage =await inquirer.prompt([{
     type:'number',
     name:'Grade',
     message:'enter your percentage'
-})
+}])
 
-if (percentage.Grade >= 80 )
+if (percentage.Grade >100 || percentage.Grade<0)
+{throw new Error("Write number between 0 - 100")}
+else if (percentage.Grade >= 80 )
 {
     console.log("You got A grade");
     
@@ -36,7 +38,20 @@ else if (percentage.Grade < 50 )
     
 }
 }
+
 checkGrade()
+}
+
+catch(error){
+console.log("error is ",error);
+
+}
+finally{
+    console.log("Finally block");
+    
+}
+
+
 // switch(grade)
 // {
 // case ''
