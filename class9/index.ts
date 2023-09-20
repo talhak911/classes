@@ -1,8 +1,8 @@
 import inquirer from "inquirer";
 
-try{
+
 async function checkGrade() {
-    
+    try{    
 let percentage =await inquirer.prompt([{
     type:'number',
     name:'Grade',
@@ -45,17 +45,20 @@ else if (percentage.Grade < 50 )
 }
 }
 
-checkGrade()
-}
 
 catch(error){
-console.log("error is ",error);
-
-}
-finally{
-    console.log("Finally block");
+    console.log("error is ",error);
     
+    }
+    finally{
+        console.log("Finally block");
+        
+    }
 }
+
+checkGrade()
+
+
 
 
 // switch(grade)

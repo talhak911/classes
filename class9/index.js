@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
-try {
-    async function checkGrade() {
+async function checkGrade() {
+    try {
         let percentage = await inquirer.prompt([{
                 type: 'number',
                 name: 'Grade',
@@ -30,14 +30,14 @@ try {
             console.log("You are fail. F grade");
         }
     }
-    checkGrade();
+    catch (error) {
+        console.log("error is ", error);
+    }
+    finally {
+        console.log("Finally block");
+    }
 }
-catch (error) {
-    console.log("error is ", error);
-}
-finally {
-    console.log("Finally block");
-}
+checkGrade();
 // switch(grade)
 // {
 // case ''
