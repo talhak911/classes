@@ -4,12 +4,17 @@ try {
         let percentage = await inquirer.prompt([{
                 type: 'number',
                 name: 'Grade',
-                message: 'enter your percentage'
+                message: 'enter your percentage',
+                validate: (input) => {
+                    if (input > 100 || input < 0) {
+                        throw new Error("Write number between 0 - 100");
+                    }
+                    else {
+                        return true;
+                    }
+                }
             }]);
-        if (percentage.Grade > 100 || percentage.Grade < 0) {
-            throw new Error("Write number between 0 - 100");
-        }
-        else if (percentage.Grade >= 80) {
+        if (percentage.Grade >= 80) {
             console.log("You got A grade");
         }
         else if (percentage.Grade >= 70 && percentage.Grade < 80) {
