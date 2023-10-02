@@ -13,3 +13,11 @@ let color="Red"
 if (Color.Red==0){
     console.log("Color is",color);    
 }
+if (Colorm.Green==1)
+{ console.log("Color is ", Color[Color.Green])};
+
+let obj= {name:"talha", marks:99}
+console.log(obj)
+obj1= {name:"Talha khan", marks:100, subject: "computer"};
+obj=obj1;
+console.log(obj)
