@@ -21,3 +21,18 @@ console.log(obj)
 obj1= {name:"Talha khan", marks:100, subject: "computer"};
 obj=obj1;
 console.log(obj)
+
+// types
+let obj1:{name:string,age: number}={name:"talha",age:20}
+type p={name:string}
+let obj2:p={name:"tk"}
+// Error obj1=obj2
+obj2 =obj1
+console.log(obj2)
+
+//
+let obj4:{name:string,age?: number}={name:"tk",age:12}
+let obj5:{name:string}={name:"talha"}
+//ok
+obj4=obj5
+console.log(obj5)
