@@ -13,21 +13,22 @@ let color="Red"
 if (Color.Red==0){
     console.log("Color is",color);    
 }
-if (Colorm.Green==1)
+if (Color.Green==1)
 { console.log("Color is ", Color[Color.Green])};
 
 let obj= {name:"talha", marks:99}
 console.log(obj)
-obj1= {name:"Talha khan", marks:100, subject: "computer"};
+let obj1:{name:string,age: number,marks:number}
+obj1 = {name:"Talha khan", age:20,marks:100};
 obj=obj1;
 console.log(obj)
 
 // types
-let obj1:{name:string,age: number}={name:"talha",age:20}
+let obj3={name:"talha",age:20}
 type p={name:string}
 let obj2:p={name:"tk"}
 // Error obj1=obj2
-obj2 =obj1
+obj2 =obj3
 console.log(obj2)
 
 //
